@@ -40,6 +40,5 @@ build/
 .idea
 
 # build outputs
-jar/
 target/
 
