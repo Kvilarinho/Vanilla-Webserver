@@ -17,7 +17,7 @@ It serves static files from the `src/main/www` directory using a **fixed thread 
 ## 📁 Project Structure
 
 ```
-vanilla-webserver/
+Vanilla-Webserver/
  ├─ src/
  │   └─ main/
  │       ├─ java/
