@@ -40,9 +40,8 @@ public class WebServer {
     private void serve(ServerSocket server) throws IOException {
 
         while (true) {
-
-                Socket client = server.accept();
-                threadPool.submit(new ClientHandler(client, LOGGER));
-            }
+            Socket client = server.accept();
+            threadPool.submit(new ClientHandler(client, LOGGER));
+        }
     }
 }
