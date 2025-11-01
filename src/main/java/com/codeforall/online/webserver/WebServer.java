@@ -8,15 +8,37 @@ import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Simple multithreaded web server.
+ * <p>
+ * Listens for client connections on a given port and serves static files
+ * from {@link #DOC_ROOT}. Each client is handled by a {@link ClientHandler}
+ * running in a separate thread from the pool.
+ */
 public class WebServer {
 
+    /** Server socket that listens for incoming connections. */
     private ServerSocket server;
+
+    /** Root directory containing files to serve. */
     public static final String DOC_ROOT = "src/main/www";
+
+    /** File returned when a requested resource is not found. */
     public static final File FILE_404 = new File(DOC_ROOT, "404.html");
+
     private static final Logger LOGGER = Logger.getLogger(WebServer.class.getName());
+
+    /** Maximum number of concurrent clients allowed. */
     private static final int MAXIMUM_CLIENTS = 306;
+
+    /** Thread pool for handling multiple client connections simultaneously. */
     private final ExecutorService threadPool = Executors.newFixedThreadPool(MAXIMUM_CLIENTS);
 
+    /**
+     * Starts the server and begins listening for incoming client connections.
+     *
+     * @param port TCP port number on which the server will listen
+     */
     public void listen(int port) {
 
         try {
@@ -37,12 +59,17 @@ public class WebServer {
         }
     }
 
+    /**
+     * Accepts client connections and assigns each to a worker thread.
+     *
+     * @param server the server socket accepting incoming connections
+     * @throws IOException if an error occurs while accepting connections
+     */
     private void serve(ServerSocket server) throws IOException {
 
         while (true) {
-
-                Socket client = server.accept();
-                threadPool.submit(new ClientHandler(client, LOGGER));
-            }
+            Socket client = server.accept();
+            threadPool.submit(new ClientHandler(client, LOGGER));
+        }
     }
 }
