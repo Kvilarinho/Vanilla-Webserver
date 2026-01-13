@@ -17,7 +17,10 @@ public enum ContentType {
     ICO("image/x-icon"),
 
     /** CSS stylesheet type. */
-    CSS("text/css; charset=UTF-8");
+    CSS("text/css; charset=UTF-8"),
+
+    /** Javascript document type **/
+    JS("application/javascript; charset=UTF-8");
 
     private final String content;
 

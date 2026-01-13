@@ -51,6 +51,8 @@ public class Header {
                 return ContentType.ICO;
             case "css":
                 return ContentType.CSS;
+            case "js":
+                return ContentType.JS;
             default:
                 return ContentType.HTML;
         }

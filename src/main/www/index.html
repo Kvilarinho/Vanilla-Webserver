@@ -1,39 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kátia Vilarinho - Portfolio</title>
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header class="site-header">
-        <a href="#top" class="header-logo">
-            <img class="avatar-logo" alt="logo" src="images/avatar-logo.png" height="28px">
-            <h4>Kátia Vilarinho</h4>
-        </a>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#experience">Work Experience</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contacts">Contacts</a>
-        </nav>
-    </header>
-    <main id="top">
-        <section class="hero">
-            <div class="hero-inner">
-                <img alt="Avatar" class="avatar" height="128" src="images/avatar.png" width="128">
-                <h1 id="hero-title">Hi, I'm <span class="accent">Kátia</span>.</h1>
-                <p class="lead">
-                    Biomedical Laboratory Technician currently transitioning into <strong>Software Development</strong>. 
-                    I bring analytical thinking, precision and structure from my scientific background into coding. 
-                    I enjoy solving logical challenges, and create clean, meaningful solutions through code.
-                </p>
-            </div>
-        </section>
-    </main>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kátia Vilarinho - Portfolio</title>
+        <link rel="stylesheet" href="assets/css/styles.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <a href="#top" class="header-logo">
+                <img class="avatar-logo" alt="logo" src="assets/img/avatar-logo.png"
+                    height="28px">
+                <h4>Kátia Vilarinho</h4>
+            </a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#experience">Work Experience</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contacts">Contacts</a>
+            </nav>
+        </header>
+        <main id="top">
+            <section class="hero">
+                <div class="hero-inner">
+                    <img alt="Avatar" class="avatar" height="128"
+                        src="assets/img/avatar.png" width="128">
+                    <h1 id="hero-title">Hi, I'm <span
+                            class="accent">Kátia</span>.</h1>
+                    <p class="lead">
+                        Biomedical Laboratory Technician currently transitioning
+                        into <strong>Software Development</strong>.
+                        I bring analytical thinking, precision and structure
+                        from my scientific background into coding.
+                        I enjoy solving logical challenges, and create clean,
+                        meaningful solutions through code.
+                    </p>
+                </div>
+            </section>
+            <section class="about" id="about">
+                <h2>About me</h2>
+                <div class="card">
+                    <p>I am a Biomedical Laboratory Technician transitioning
+                        into Software Development.</p>
+                    For the past 10 years, I worked in highly regulated and
+                    fast-paced environments, where <strong>precision and structure</strong> — and solving problems under pressure — were part of my daily
+                    routine. These experiences shaped my analytical mindset and
+                    helped me learn fast, adapt quickly, and stay focused —
+                    skills I now apply to coding.</p>
+
+                    <a class="exp-toggle" href="#" onclick="showAboutDetails(); return false;">
+                        Read more about my background
+                    <span class="chev">></span></a>
+
+                <div class="detail" id="about-details">
+                    <p>I am currently completing a Full-Stack Java Bootcamp and
+                        building practical projects in Java, using <strong>OOP</strong>, <strong>MVC</strong>,
+                        <strong>networking</strong>, <strong>multithreading</strong>, and <strong>web technologies</strong> such as
+                        HTML, CSS, and JavaScript. I enjoy challenges that make
+                        me think, and I love creating solutions that are clean,
+                        logical, and useful.</p>
+
+                        <br>
+
+                    <p>Coming from a scientific background, I bring <strong>discipline</strong>,
+                        <strong>attention to detail</strong>, and a strong sense of
+                        <strong>responsibility</strong>. At the same time, curiosity,
+                        determination, and a growing passion for tech are
+                        driving me forward.
+                        I am committed to continuous learning and excited to
+                        contribute to real-world software projects and grow
+                        within the tech industry.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="experience" id="experience">
+                <h2>Work Experience</h2>
+                <div class="card">
+                    <h3>Clinical Laboratorial Technician</h4>
+                    <h5>Centro de Medicina Laboratorial Germano de Sousa,
+                        Portugal, 2014-Present</h6>
+                    <a class="exp-toggle" href="#"
+                        onclick="showExperienceDetails(); return false;">
+                        Clinical Laboratory Technician — Key Contributions
+                        <span class="chev">></span>
+                    </a>
+
+                    <ul class="detail" id="experience-details">
+                        <li>Grew within the organization starting as a part-time
+                            phlebotomist, progressing to full-time lab
+                            technician and later contributing across multiple
+                            departments, including training, data integration,
+                            procurement, and special techniques.</li>
+                        <li>Supported laboratory operations, sample collection,
+                            administration and workflow coordination.</li>
+                        <li>Tested and contributed feedback to new internal
+                            software tools to improve process efficiency and
+                            accuracy.</li>
+                        <li>Trained new staff and collaborated in the
+                            development of learning resources and evaluation
+                            procedures.</li>
+                        <li>Played a key role during the pandemic, supporting
+                            the launch and operation of COVID-19 testing units
+                            under rapidly changing conditions.</li>
+                        <li>Collaborated with software developers on data
+                            mapping and reference ranges for integration with
+                            the Portuguese NHS (SNS).</li>
+                        <li>Ensured nationwide logistics support in Procurement,
+                            managing stock and critical supplies.</li>
+                        <li>Currently working in Special Techniques performing
+                            advanced lab analyses (RIA, HPLC, Atomic
+                            Absorption).</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="education" id="education">
+                <h2>Education</h2>
+                <div class="card education-card">
+
+                    <div class="edu-item">
+                        <div class="edu-header">
+                            <h3 class="edu-title">Full Stack Programming
+                                Bootcamp</h3>
+                            <span class="edu-date">Jul 2025 – Jan 2026</span>
+                        </div>
+                        <p class="edu-provider">Code for All</p>
+                    </div>
+
+                    <div class="edu-item">
+                        <div class="edu-header">
+                            <h3 class="edu-title">Google IT Support Professional
+                                Certificate</h3>
+                            <span class="edu-date">May 2021 – Aug 2021</span>
+                        </div>
+                        <p class="edu-provider">Google / Coursera</p>
+                    </div>
+
+                    <div class="edu-item">
+                        <div class="edu-header">
+                            <div class="edu-title-group">
+                                <h3 class="edu-title">BSc in Biomedical
+                                    Laboratory Sciences</h3>
+                                <p class="edu-subtitle">(Licenciatura em
+                                    Análises Clínicas e Saúde Pública)</p>
+                            </div>
+                            <span class="edu-date">Sept 2009 – Jul 2013</span>
+                        </div>
+                        <p class="edu-provider">School of Technology and Health
+                            (ESTeSL), Polytechnic Institute of Lisbon,
+                            Portugal</p>
+                    </div>
+                </div>
+            </section>
+            <section class="projects" id="projects">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                <div class="card project-card featured">
+                    <h3 class="project-title">Personal Portfolio Website</h3>
+                    <p class="project-description">
+                        A personal portfolio website built using <strong>HTML, CSS,
+                        and JavaScript</strong> to showcase my skills, projects, and
+                        experience as I transition into software development.
+                    </p>
+                    <a class="exp-toggle" href="project.html?project=portfolioWebsite">
+                        View Project
+                    </a>
+                </div>
+                <div class="card project-card">
+                    <h3 class="project-title">Bullseye</h3>
+                    <p class="project-description">
+                        A 2D <strong>Java game</strong> developed using
+                        <strong>OOP, enums, factory pattern, randomization logic, and file I/O</strong> for persistent high scores. <br>
+                        The player can shoot various types of arrows at targets. The objective is to score points by destroying those targets.
+                    </p>
+                    <a class="exp-toggle" href="project.html?project=bullseye">
+                        View Project
+                    </a>
+                </div>
+                <div class="card project-card">
+                    <h3 class="project-title">Vanilla WebServer</h3>
+                    <p class="project-description">
+                        Simple multithreaded HTTP server built in <strong>Java</strong> — serves static files with <strong>concurrency, Stream API, and clean OOP structure</strong>.
+                    </p>
+                    <a class="exp-toggle" href="project.html?project=vanilla">
+                        View Project
+                    </a>
+                </div>
+                <div class="card project-card">
+                    <h3 class="project-title">Task Manager</h3>
+                    <p class="project-description">
+                        Console-based task manager built with <strong>OOP and Strategy Pattern for command handling</strong>, includes file-based persistence.
+                    </p>
+                    <a class="exp-toggle" href="project.html?project=taskManager">
+                        View Project
+                    </a>
+                </div>
+                <div class="card project-card">
+                    <h3 class="project-title">Concurrent TCP Chat (Server & Client)</h3>
+                    <p class="project-description">
+                        A multithreaded <strong>TCP chat server and client</strong> with commands, private messages, admin mode, and clean architecture.
+                        <br>Includes tests <strong>(JUnit + Mockito) and full documentation.</strong> 
+                    </p>
+                    <a class="exp-toggle" href="project.html?project=concurrentTcp">
+                        View Project
+                    </a>
+                </div>
+                </div>
+            </section>
+            <section class="skills" id="skills">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                <div class="card tec-skills-card">
+                    <h4>Technical Skills</h4>
+                    <ul class="skills-list">
+                        <li><strong>Programming Languages:</strong> Java, HTML, CSS, JavaScript</li>
+                        <li><strong>Core Concepts:</strong> Object-Oriented Programming (OOP), MVC, RESTful APIs, Multithreading, Networking, Collections, Concurrency, Streams API, I/O Streams</li>
+                        <li><strong>Backend & Architecture:</strong> Spring MVC, Web Services, JPA/Hibernate</li>
+                        <li><strong>Testing:</strong> JUnit, Mockito</li>
+                        <li><strong>Databases:</strong> PostgreSQL</li>
+                        <li><strong>Tools & Technologies:</strong> Git, GitHub, VS Code, IntelliJ IDEA</li>
+                        <li><strong>Other:</strong> Command Line(CLI), AI (Foundations, Spring AI, APIs)</li>
+                    </ul>
+                </div>
+                <div class="card soft-skills-card">
+                    <h4>Soft Skills</h4>
+                    <ul class="skills-list">
+                        <li>Analytical Thinking & Problem-Solving</li>
+                        <li>Attention to Detail & Precision</li>
+                        <li>Adaptability & Quick Learning</li>
+                        <li>Time Management & Organization</li>
+                        <li>Effective Communication & Team Collaboration</li>
+                        <li>Responsibility & Reliability</li>
+                    </ul>
+                </div>
+                </div>
+            </section>
+            <section class="contacts" id="contacts">
+                <h2>Contacts</h2>
+                <div class="card contacts-card">
+                    <div class="contact-items">      
+                    <a href="mailto:katia.vilarinho.dev@gmail.com" target="_blank">katia.vilarinho.dev@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/kátia-vilarinho/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/Kvilarinho" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </section>  
+        </main>
+        <footer class="site-footer">
+            <p>© <span id="year"></span> Kátia Vilarinho · Software Engineer. All rights reserved.</p>
+        </footer>
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>

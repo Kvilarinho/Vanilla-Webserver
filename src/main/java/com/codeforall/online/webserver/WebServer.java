@@ -9,12 +9,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Simple multithreaded web server.
+ * Simple multithreaded HTTP web server.
  * <p>
- * Listens for client connections on a given port and serves static files
- * from {@link #DOC_ROOT}. Each client is handled by a {@link ClientHandler}
- * running in a separate thread from the pool.
+ * Listens for client connections on a given port and handles basic HTTP GET
+ * requests, serving static resources from {@link #DOC_ROOT}. Requested paths
+ * are resolved against the document root, query strings are ignored for
+ * file resolution, and appropriate Content-Type headers and HTTP status
+ * codes are returned.
+ *
+ * Each client connection is processed by a {@link ClientHandler} running
+ * in a separate thread from a thread pool.
  */
+
 public class WebServer {
 
     /** Server socket that listens for incoming connections. */

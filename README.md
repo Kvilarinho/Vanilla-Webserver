@@ -1,45 +1,72 @@
-# 🖥️ Vanilla Web Server
+# Vanilla Web Server
 
-Simple multithreaded HTTP server built entirely in **Java**.  
-It serves static files from the `src/main/www` directory using a **fixed thread pool** to handle multiple clients simultaneously.
+A simple multithreaded **HTTP web server** built entirely in **Java**, designed to provide a clear understanding of low-level client-server communication and the HTTP protocol.
 
----
+The server listens for incoming connections and serves static resources from the `src/main/www` directory, using a **fixed thread pool** to handle multiple clients concurrently.
 
-## ⚙️ Features
-- 🧵 Handles multiple client connections concurrently (`ExecutorService`)
-- 📄 Serves static files (`.html`, `.css`, `.png`, `.ico`)
-- 🚫 Returns custom **404.html** when a file is not found
-- 🧩 Detects content type automatically through the `ContentType` enum
-- 💬 Clean, documented code with **Javadoc** and clear structure
 
 ---
 
-## 📁 Project Structure
+## Features
+- Handles multiple client connections concurrently using `ExecutorService`
+- Parses basic HTTP `GET` requests
+- Serves static resources (`.html`, `.css`, `.js`, `.png`, `.ico`)
+- Supports **JavaScript ES modules** with correct MIME types
+- Automatically determines `Content-Type` via a dedicated `ContentType` enum
+- Ignores query strings when resolving filesystem paths
+- Returns a custom **404.html** page when resources are not found
+- Clean, well-documented codebase with **Javadoc** and clear separation of concerns
+
+---
+
+## Project Structure
 
 ```
 Vanilla-Webserver/
- ├─ src/
- │   └─ main/
- │       ├─ java/
- │       │   └─ com/codeforall/online/webserver/
- │       │       ├─ WebServer.java
- │       │       ├─ ClientHandler.java
- │       │       └─ utils/
- │       │           ├─ Header.java
- │       │           └─ ContentType.java
- │       └─ www/
- │           ├─ index.html
- │           ├─ 404.html
- │           ├─ styles.css
- │           └─ images/
- ├─ images/
- │   └─ webserver_running.png
- └─ README.md
+├─ src/
+│  └─ main/
+│     ├─ java/
+│     │  └─ com/codeforall/online/webserver/
+│     │     ├─ WebServer.java
+│     │     ├─ ClientHandler.java
+│     │     └─ utils/
+│     │        ├─ Header.java
+│     │        └─ ContentType.java
+│     └─ www/
+│        ├─ assets/
+│        │  ├─ css/
+│        │  │  └─ styles.css
+│        │  ├─ js/
+│        │  │  ├─ script.js
+│        │  │  ├─ project.js
+│        │  │  └─ data/
+│        │  │     └─ projects.js
+│        │  └─ img/
+│        │     ├─ avatar.png
+│        │     ├─ avatar-logo.png
+│        │     └─ projects/
+│        │        ├─ bullseye/
+│        │        │  └─ bullseye.jpeg
+│        │        ├─ concurrent-tcp-chatserver/
+│        │        │  └─ concurrent-tcp-chatserver.jpeg
+│        │        ├─ portfolio-website/
+│        │        │  └─ portfolio-website.png
+│        │        ├─ task-manager/
+│        │        │  └─ task-manager.jpeg
+│        │        └─ vanilla-webserver/
+│        │           └─ vanilla-webserver.jpeg
+│        ├─ index.html
+│        ├─ project.html
+│        ├─ 404.html
+│        └─ favicon.ico
+├─ images/
+│  └─ webserver_running.png
+└─ README.md
 ```
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 1. **Compile** the project (e.g., in IntelliJ or using Maven).  
 2. **Run** the `Main` class:
@@ -51,7 +78,7 @@ Vanilla-Webserver/
 
 ---
 
-## 🧠 Example Console Output
+## Example Console Output
 
 ```
 INFO: Listening at port 9001
@@ -61,21 +88,39 @@ INFO: Request received: GET /index.html HTTP/1.1
 
 ---
 
-## 🖼️ Screenshot
+## Screenshot
 ![WebServer Running](images/webserver_running.png)
 
 ---
 
-## 🧰 Technologies Used
-- ☕ Java 17  
-- 🧵 Concurrency (`ExecutorService`)  
-- 💾 Java I/O  
-- 🔍 Stream API  
-- 🪵 Logging (`java.util.logging`)
+## Technologies Used
+- Java 17 
+- Java Networking (Sockets)
+- Concurrency (`ExecutorService`)  
+- Java I/O  
+- Stream API  
+- Logging (`java.util.logging`)
 
 ---
 
-## 👩‍💻 Author
+## What I Learned
+
+Building this project from scratch gave me a deeper understanding of how web
+servers work at a low level, beyond using frameworks.
+
+Through this project, I learned:
+
+- How HTTP requests are structured and how to manually parse request lines
+- The importance of separating URL paths from query strings when resolving files
+- How browsers depend on correct MIME types, especially for JavaScript ES modules
+- How to serve different types of static resources (`HTML`, `CSS`, `JS`, images)
+- How to handle multiple client connections using a fixed thread pool
+- How to structure a clean and maintainable backend without relying on frameworks
+- Why higher-level frameworks abstract many of these concerns and when they become valuable
+
+---
+
+## Author
 **Kátia Vilarinho**  
 Developed as part of a Java Full-Stack Bootcamp (Code For All_).
 

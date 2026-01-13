@@ -12,8 +12,13 @@ import static com.codeforall.online.webserver.WebServer.DOC_ROOT;
 import static com.codeforall.online.webserver.WebServer.FILE_404;
 
 /**
- * Handles a single client connection: reads a simple HTTP GET
- * and serves a static file from {@link WebServer#DOC_ROOT}.
+ * Handles a single client connection by parsing an HTTP GET request,
+ * resolving the requested resource path (including query string handling),
+ * determining the appropriate Content-Type, and serving static files
+ * from {@link WebServer#DOC_ROOT}.
+ *
+ * Supports HTML, CSS, JavaScript (ES modules), and other static assets,
+ * returning appropriate HTTP status codes when resources are not found.
  */
 public class ClientHandler implements Runnable {
 
@@ -76,13 +81,28 @@ public class ClientHandler implements Runnable {
 
     /** Extracts the path from the request line (e.g., "GET /index.html HTTP/1.1"). */
     private String extractFileRequested(String httpRequest) {
+
         String firstLine = getFirstLine(httpRequest);
+
         int first = firstLine.indexOf(' ');
         int second = firstLine.indexOf(' ', first + 1);
 
         String fileRequested = firstLine.substring(first + 1, second);
-        if (fileRequested.equals("/")) fileRequested = "/index.html";
-        if (fileRequested.startsWith("/")) fileRequested = fileRequested.substring(1);
+
+        // remove query string if present (?project=...)
+        int queryIndex = fileRequested.indexOf('?');
+        if (queryIndex != -1) {
+            fileRequested = fileRequested.substring(0, queryIndex);
+        }
+
+        if (fileRequested.equals("/")) {
+            fileRequested = "/index.html";
+        }
+
+        if (fileRequested.startsWith("/")) {
+            fileRequested = fileRequested.substring(1);
+        }
+
         return fileRequested;
     }
 
