@@ -24,6 +24,9 @@ if (!project) {
     document.getElementById("projectDescription").innerHTML = `
     <h2>${project.title}</h2>
     <p>${project.longDescription.intro}</p>
+    <br/>
+    ${project.images.previewImage 
+        ? `<img src="${project.images.previewImage}" alt="${project.title} preview" class="project-hero"/>` : ""}
     <h3>Main Features</h3>
     <ul>${project.longDescription.features.map(f => `<li>${f}</li>`).join("")}</ul>
     ${project.longDescription.architecture ? `<h3>Architecture</h3><p>${project.longDescription.architecture}</p>` : ""}
@@ -34,9 +37,22 @@ if (!project) {
     // TECHNOLOGIES
     document.getElementById("technologiesUsed").innerHTML = `
     <h2>Technologies Used</h2>
-    <ul>${project.technologies.map(t => `<li>${t}</li>`).join("")}</ul>`;
+    ${renderTechSection("Backend", project.technologies.backend)}
+    ${renderTechSection("Frontend", project.technologies.frontend)}
+    ${renderTechSection("Tools", project.technologies.tools)}`;
+
 
     // GITHUB LINK
     const a = document.getElementById("githubLink");
     a.href = project.github;
+
+
+    function renderTechSection(title, list) {
+    if (!list?.length) return "";
+    return `
+        <h3>${title}</h3>
+        <ul>${list.map(t => `<li>${t}</li>`).join("")}</ul>
+    `;
+}
+
 }
