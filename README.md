@@ -126,4 +126,4 @@ Developed as part of a Java Full-Stack Bootcamp (Code For All_).
 
 ---
 
-✨ *"Simple, clean, and built from scratch — a true vanilla web server."*
+*"Simple, clean, and built from scratch — a true vanilla web server."*
