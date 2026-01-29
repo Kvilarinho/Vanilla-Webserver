@@ -42,7 +42,7 @@ const teamSafetyMonitor = {
         previewImage: "assets/img/projects/team-safety-monitor/team_safety_monitor_dashboard.jpeg"
     },
     longDescription: {
-        intro: "Developed collaboratively in a team of five as a final bootcamp project, Team Safety Monitor is a full-stack web application designed to analyze team workload and detect early signs of overwork and burnout. The system provides structured visibility into work patterns through role-based access, configurable safety thresholds, and contextual risk alerts, supporting healthier and more sustainable team practices.",
+        intro: "Developed collaboratively in a team of five as a final bootcamp project, Team Safety Monitor is a full-stack web application designed to analyze team workload and detect early signs of overwork and burnout. The system provides structured visibility into work patterns through role-based access, safety thresholds, and contextual risk alerts, supporting healthier and more sustainable team practices.",
         features: [
             "Role-based access control with clearly defined Admin and Member responsibilities",
             "Members register daily work entries including working hours, breaks, focus blocks, and consecutive workdays",
